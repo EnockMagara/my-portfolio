@@ -153,41 +153,67 @@
 
     /* Custom styles for Hero Section */
     #hero {
-      background-image: url('assets/img/BACKGROUND.PNG'); /* Updated background image */
-      background-size: cover; /* Ensure the image covers the entire section */
-      background-position: center; /* Center the background image */
-      padding: 100px 0;
+      position: relative;
+      background-image: url('assets/img/BACKGROUND.PNG');
+      background-size: cover;
+      background-position: center;
       min-height: 100vh;
       display: flex;
       align-items: center;
+      padding: 60px 0;
     }
 
-    /* Adjust text positioning in Hero Section */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
     #hero .container {
-      padding: 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
       text-align: left;
+      color: white;
     }
 
     .hero-greeting {
-      color: white;
       font-size: 1.5rem;
       margin-bottom: 10px;
+      opacity: 0.9;
     }
 
     .hero-name {
-      color: white;
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .hero-description {
-      color: white;
       font-size: 1.2rem;
       margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: var(--secondary-color);
     }
 
     /* Responsive adjustments */
@@ -208,15 +234,11 @@
 
       /* Adjust hero section text positioning for smaller screens */
       #hero {
-        padding: 60px 0;
-      }
-
-      #hero .container {
-        padding: 20px;
+        padding: 40px 0;
       }
 
       .hero-content {
-        text-align: left;
+        text-align: center;
       }
 
       .hero-greeting {
@@ -232,8 +254,9 @@
       }
 
       .cta-button {
-        display: inline-block;
-        margin-top: 20px;
+        display: block;
+        margin: 20px auto 0;
+        max-width: 200px;
       }
 
       /* Adjust card padding and margin for smaller screens */
@@ -350,10 +373,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <video autoplay muted loop id="hero-video">
-        <source src="assets/video/hero-bg.mp4" type="video/mp4">
-      </video>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="hero-overlay"></div>
+      <div class="container">
         <div class="hero-content">
           <h2 class="hero-greeting">Hello, I am</h2>
           <h1 class="hero-name">Enock Mecheo</h1>
