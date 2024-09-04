@@ -167,6 +167,29 @@
       padding: 20px;
     }
 
+    .hero-content {
+      text-align: left;
+    }
+
+    .hero-greeting {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-name {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .hero-description {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       /* Adjust padding for smaller screens */
@@ -185,22 +208,32 @@
 
       /* Adjust hero section text positioning for smaller screens */
       #hero {
-        padding: 80px 0;
+        padding: 60px 0;
       }
 
       #hero .container {
         padding: 20px;
-        text-align: left; /* Align text to the left */
       }
 
-      #hero p {
+      .hero-content {
+        text-align: left;
+      }
+
+      .hero-greeting {
         font-size: 1.2rem;
       }
 
+      .hero-name {
+        font-size: 2.5rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
       .cta-button {
-        display: block;
-        margin: 20px 0 0; /* Adjust margin for left alignment */
-        max-width: 200px;
+        display: inline-block;
+        margin-top: 20px;
       }
 
       /* Adjust card padding and margin for smaller screens */
@@ -270,41 +303,6 @@
         margin-right: 5px;
         margin-bottom: 0;
       }
-
-      #hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        text-align: left; /* Align text to the left */
-        padding: 0 20px;
-      }
-
-      #hero .container {
-        padding: 0;
-        width: 100%;
-      }
-
-      #hero h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-      }
-
-      #hero p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-      }
-
-      #hero .typed {
-        display: block;
-        min-height: 2em; /* Adjust based on your content */
-      }
-
-      .cta-button {
-        display: inline-block;
-        margin: 20px 0 0; /* Adjust margin for left alignment */
-        padding: 10px 20px;
-        font-size: 1rem;
-      }
     }
   </style>
 
@@ -356,14 +354,12 @@
         <source src="assets/video/hero-bg.mp4" type="video/mp4">
       </video>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <!-- Hello, I am text in smaller size -->
-        <h2 style="color: white; font-size: 1.5rem;">Hello, I am</h2>
-        <!-- Enock Mecheo name in large white text -->
-        <h1 style="color: white; font-size: 3rem; font-weight: bold;">Enock Mecheo</h1>
-        <!-- Animated text -->
-        <p>I'm <span class="typed" data-typed-items="a Computer Science Student, a Software Developer, a Problem Solver">a Computer Science Student</span></p>
-        <!-- Call-to-action button -->
-        <a href="portfolio-details.html" class="cta-button">View My Work</a>
+        <div class="hero-content">
+          <h2 class="hero-greeting">Hello, I am</h2>
+          <h1 class="hero-name">Enock Mecheo</h1>
+          <p class="hero-description">I'm <span class="typed" data-typed-items="a Computer Science Student, a Software Developer, a Problem Solver"></span></p>
+          <a href="portfolio-details.html" class="cta-button">View My Work</a>
+        </div>
       </div>
     </section><!-- /Hero Section -->
 
