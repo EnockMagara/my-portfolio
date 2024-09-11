@@ -191,23 +191,36 @@
 
     // Resume button functionality
     if (showResumeBtn && resumeFrame) {
-      // Function to toggle resume visibility
+      let isResumeVisible = false; // Track the state of the resume
+
       function toggleResume(e) {
         e.preventDefault(); // Prevent default behavior for both click and touch
+        console.log('Toggle Resume clicked'); // Debug log
+
         const buttonText = showResumeBtn.querySelector('.button-text');
 
-        if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
+        if (!isResumeVisible) {
           resumeFrame.style.display = 'block';
-          if (buttonText) {
-            buttonText.textContent = 'Hide Resume';
-          }
+          // Use setTimeout to ensure the display change has taken effect
+          setTimeout(() => {
+            resumeFrame.style.height = '600px';
+            resumeFrame.style.opacity = '1';
+          }, 10);
+          if (buttonText) buttonText.textContent = 'Hide Resume';
+          isResumeVisible = true;
+          console.log('Showing resume'); // Debug log
           // Scroll to the resume frame
           resumeFrame.scrollIntoView({ behavior: 'smooth' });
         } else {
-          resumeFrame.style.display = 'none';
-          if (buttonText) {
-            buttonText.textContent = 'View Resume';
-          }
+          resumeFrame.style.height = '0';
+          resumeFrame.style.opacity = '0';
+          // Use setTimeout to hide the iframe after the transition
+          setTimeout(() => {
+            resumeFrame.style.display = 'none';
+          }, 300);
+          if (buttonText) buttonText.textContent = 'View Resume';
+          isResumeVisible = false;
+          console.log('Hiding resume'); // Debug log
         }
       }
 
@@ -218,31 +231,9 @@
         toggleResume(e);
       });
 
-      // Animation for button
-      function animateButton(entering) {
-        const buttonLine = showResumeBtn.querySelector('.button-line');
-        if (buttonLine) {
-          gsap.to(buttonLine, {
-            height: entering ? '100%' : '2px',
-            duration: 0.3,
-            ease: 'power2.out'
-          });
-        }
-      }
-
-      // Mouse events for desktop
-      showResumeBtn.addEventListener('mouseenter', () => animateButton(true));
-      showResumeBtn.addEventListener('mouseleave', () => animateButton(false));
-
-      // Touch events for mobile
-      showResumeBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        animateButton(true);
-      }, { passive: false });
-
-      showResumeBtn.addEventListener('touchend', () => {
-        animateButton(false);
-      });
+      console.log('Resume button event listeners added'); // Debug log
+    } else {
+      console.error('Resume button or frame not found');
     }
 
     // Disable hover effects on mobile devices
@@ -333,67 +324,6 @@
       const lightbox = GLightbox({
         selector: '.glightbox'
       });
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const showResumeBtn = document.getElementById('showResumeBtn');
-    const resumeFrame = document.getElementById('resumeFrame');
-
-    if (showResumeBtn && resumeFrame) {
-      // Function to toggle resume visibility
-      function toggleResume(e) {
-        e.preventDefault(); // Prevent default behavior for both click and touch
-        const buttonText = showResumeBtn.querySelector('.button-text');
-
-        if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
-          resumeFrame.style.display = 'block';
-          if (buttonText) {
-            buttonText.textContent = 'Hide Resume';
-          }
-          // Scroll to the resume frame
-          resumeFrame.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          resumeFrame.style.display = 'none';
-          if (buttonText) {
-            buttonText.textContent = 'View Resume';
-          }
-        }
-      }
-
-      // Add event listeners for both click and touch
-      showResumeBtn.addEventListener('click', toggleResume);
-      showResumeBtn.addEventListener('touchend', function(e) {
-        e.preventDefault(); // Prevent default touch behavior
-        toggleResume(e);
-      });
-
-      // Animation for button
-      const buttonLine = showResumeBtn.querySelector('.button-line');
-      
-      function animateButton(entering) {
-        gsap.to(buttonLine, {
-          height: entering ? '100%' : '2px',
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      }
-
-      // Mouse events for desktop
-      showResumeBtn.addEventListener('mouseenter', () => animateButton(true));
-      showResumeBtn.addEventListener('mouseleave', () => animateButton(false));
-
-      // Touch events for mobile
-      showResumeBtn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        animateButton(true);
-      }, { passive: false });
-
-      showResumeBtn.addEventListener('touchend', () => {
-        animateButton(false);
-      });
-    } else {
-      console.error('Resume button or frame not found');
     }
   });
 })();

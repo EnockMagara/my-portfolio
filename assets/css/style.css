@@ -337,79 +337,44 @@
     }
   }
 
-.animated-button {
-  position: relative;
+#showResumeBtn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 25px;
   color: #000;
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  overflow: hidden;
+  border: 2px solid rgb(236, 91, 95);
+  border-radius: 5px;
   background-color: transparent;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
-}
-
-.animated-button .button-text {
-  position: relative;
-  z-index: 2;
-}
-
-.animated-button .button-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: rgb(236, 91, 95);
-  transition: height 0.3s ease;
-  will-change: height;
-}
-
-.animated-button:hover {
-  color: #fff;
-}
-
-.animated-button:hover .button-line {
-  height: 100%;
-}
-
-/* Disable hover effects on touch devices */
-.touch-device .animated-button:hover {
-  color: #000;
-}
-
-.touch-device .animated-button:hover .button-line {
-  height: 2px;
-}
-
-#showResumeBtn {
-  color: #000 !important; /* Force black text color */
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
 }
 
 #showResumeBtn:hover,
 #showResumeBtn:active {
-  color: #000 !important; /* Ensure text stays black on hover */
+  background-color: rgb(236, 91, 95);
+  color: #fff;
+}
+
+#resumeFrame {
+  display: none;
+  width: 100%;
+  height: 0;
+  border: none;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
 
 /* Improve touch area for mobile */
 @media (max-width: 768px) {
   #showResumeBtn {
-    padding: 15px 25px; /* Increase padding for larger touch area */
-    font-size: 16px; /* Increase font size for better visibility */
+    padding: 15px 25px;
+    font-size: 16px;
   }
-}
-
-/* Style for the resume iframe */
-#resumeFrame {
-  width: 100%;
-  height: 600px; /* Adjust height as needed */
-  border: none;
-  margin-top: 20px;
 }
 
 .social-links-top {
