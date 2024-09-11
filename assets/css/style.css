@@ -1,0 +1,654 @@
+/* General Styles */
+:root {
+    --primary-color: #003366; /* Deep Blue */
+    --secondary-color: #ff6600; /* Orange */
+    --background-color: #f0f0f0; /* Light Gray */
+    --text-color: #333333; /* Dark Text */
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #808080; /* This is a gray color, adjust as needed */
+  }
+  
+  body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: #fff; /* Adjust text color for better contrast */
+    padding-top: 40px; /* Adjust this value to match the height of your social links bar */
+  }
+  
+  .main {
+    min-height: calc(100vh - 40px); /* Subtract the height of the social links bar */
+    background-color: #808080; /* Same as body background */
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  .social-links-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1002;
+  }
+  
+  /* Remove any margin or padding from sections if present */
+  .section {
+    margin: 0;
+    padding: 60px 0;
+  }
+  
+  /* Adjust the hero section to remove any potential gaps */
+  #hero {
+    margin-top: -40px; /* Negative margin to offset the social links bar */
+    padding-top: 40px; /* Add padding to push content down */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier New', monospace;
+    /* Add other heading styles as needed */
+  }
+  
+  /* Layout */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Header Styles */
+  .header {
+    background: linear-gradient(180deg, #1a1a1a, #333333);
+    padding: 20px;
+  }
+  
+  .profile-img img {
+    border-radius: 50%;
+    max-width: 150px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .sitename {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+  }
+  
+  /* Navigation Menu */
+  .navmenu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navmenu ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    transition: color 0.3s;
+  }
+  
+  .navmenu ul li a:hover,
+  .navmenu ul li a.active {
+    color: var(--secondary-color);
+  }
+  
+  .navmenu ul li a i {
+    margin-right: 10px;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background-image: url('assets/img/BACKGROUND.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Ensure text is visible on the background */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .hero-greeting {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .hero-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1s;
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: rgb(236, 91, 95);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid rgb(236, 91, 95);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 2s; /* Delay the button animation */
+  }
+
+  .cta-button:hover {
+    background-color: rgb(236, 91, 95);
+    color: #fff;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* About Section */
+  .about-me ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-me ul li {
+    margin-bottom: 10px;
+  }
+  
+  .about-me ul li strong {
+    color: var(--secondary-color);
+  }
+  
+  .skills-category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills-category i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  /* Portfolio Section */
+  .project-card {
+    margin-bottom: 30px;
+  }
+  
+  .project-image {
+    border-radius: 15px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .tech-icons i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+  
+  .website-demo {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 15px;
+  }
+  
+  .website-demo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    transform: scale(0.33);
+    transform-origin: 0 0;
+    pointer-events: none;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .copyright {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .copyright .sitename {
+    color: #ff6600; /* Your secondary color */
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .copyright span {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section {
+      padding: 40px 0;
+    }
+  
+    .hero-greeting {
+      font-size: 1.2rem;
+    }
+  
+    .hero-name {
+      font-size: 2.5rem;
+    }
+  
+    .hero-description {
+      font-size: 1rem;
+    }
+  
+    .card {
+      padding: 15px;
+    }
+  
+    .about-me h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .about-me .skills-category {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .about-me .skills-category i {
+      margin-bottom: 5px;
+    }
+  }
+
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  background-color: transparent;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.animated-button .button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.animated-button .button-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(236, 91, 95);
+  transition: height 0.3s ease;
+  will-change: height;
+}
+
+.animated-button:hover {
+  color: #fff;
+}
+
+.animated-button:hover .button-line {
+  height: 100%;
+}
+
+/* Disable hover effects on touch devices */
+.touch-device .animated-button:hover {
+  color: #000;
+}
+
+.touch-device .animated-button:hover .button-line {
+  height: 2px;
+}
+
+#showResumeBtn {
+  color: #000 !important; /* Force black text color */
+}
+
+#showResumeBtn:hover {
+  color: #000 !important; /* Ensure text stays black on hover */
+}
+
+.social-links-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1002; /* Increased z-index to be above section-separator */
+}
+
+.social-links-top a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-links-top a:hover {
+  color: rgb(159, 159, 222);
+}
+
+.section-separator {
+  background-color: rgb(51, 51, 51); /* Dark gray color */
+  padding: 10px 0;
+  position: sticky;
+  top: 40px; /* Should match the height of social-links-top */
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #ffffff; /* White color for default state */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #ff6600; /* Red color for hover and active states (using your secondary color) */
+}
+
+.navicon {
+  margin-right: 5px;
+}
+
+/* Project card styles */
+.project-card .card-title {
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #300404; /* Dark red color to match the theme */
+}
+
+/* You may want to adjust the body text size for better contrast */
+.project-card .card-text {
+  font-size: 1rem;
+}
+
+/* Back to Home button styles */
+.container.mt-3 {
+  padding: 20px 0;
+}
+
+.container.mt-3 .animated-button {
+  display: inline-block;
+  padding: 12px 24px;
+  color: rgb(236, 91, 95);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid rgb(236, 91, 95);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: color 0.3s ease;
+}
+
+.container.mt-3 .animated-button .button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.container.mt-3 .animated-button .button-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(236, 91, 95);
+  transition: height 0.3s ease;
+}
+
+.container.mt-3 .animated-button:hover {
+  color: #fff;
+}
+
+.container.mt-3 .animated-button:hover .button-line {
+  height: 100%;
+}
+
+main.main {
+  padding-top: 90px; /* Adjust this value based on the combined height of social-links-top and section-separator */
+}
+
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: #ff6600; /* Red color */
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
+  border-radius: 50%;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top i {
+  font-size: 30px; /* Bigger icon */
+  color: #000000; /* Changed to black for better contrast */
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background: #ff8533; /* Lighter red on hover */
+  transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.scroll-top:hover i {
+  color: #ffffff; /* Change to white on hover for additional effect */
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Styles specific to portfolio-details.html */
+.portfolio-details-page .main {
+  padding: 20px 20px 40px; /* Reduced top padding, consistent side padding */
+}
+
+.portfolio-details-page .container {
+  max-width: 1000px; /* Reduced max-width for better content density */
+  margin: 0 auto;
+}
+
+/* Adjust the 'Back to Home' button positioning */
+.portfolio-details-page .container.mt-3 {
+  margin-bottom: 20px; /* Reduced space below the button */
+}
+
+/* Adjust spacing for project cards */
+.portfolio-details-page .project-card {
+  margin-bottom: 30px; /* Reduced space between projects */
+  padding: 20px; /* Reduced internal padding of the card */
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Adjust spacing for project titles */
+.portfolio-details-page .project-card .card-title {
+  margin-bottom: 15px; /* Slightly reduced space below the title */
+  font-size: 1.5rem; /* Larger font size for titles */
+}
+
+/* Adjust spacing for project description */
+.portfolio-details-page .project-card .card-text {
+  margin-bottom: 15px;
+}
+
+/* Adjust spacing for tech icons */
+.portfolio-details-page .tech-icons {
+  margin: 15px 0;
+}
+
+/* Adjust spacing for 'View Project' button */
+.portfolio-details-page .animated-button {
+  margin-top: 15px;
+}
+
+/* Adjust iframe container spacing */
+.portfolio-details-page .website-demo {
+  margin-top: 20px;
+}
+
+/* Adjust space between sections */
+.portfolio-details-page .section {
+  margin-bottom: 40px;
+}
+
+/* Improve readability of project descriptions */
+.portfolio-details-page .project-card .card-text {
+  line-height: 1.6;
+  color: #333; /* Darker text for better contrast */
+}
+
+/* Style for project images */
+.portfolio-details-page .project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Styles for the Back to Home button */
+.portfolio-details-page .container.mt-3 {
+  padding-left: 15px; /* Default padding for all screen sizes */
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+/* Additional padding for mobile screens */
+@media (max-width: 767px) {
+  .portfolio-details-page .container.mt-3 {
+    padding-left: 20px; /* Increased left padding for mobile */
+  }
+}
+
+/* Ensure the button doesn't stretch full width on mobile */
+.portfolio-details-page .animated-button {
+  display: inline-block;
+  margin-top: 10px;
+}
