@@ -195,13 +195,18 @@
         e.preventDefault(); // Prevent default link behavior
         const buttonText = this.querySelector('.button-text');
 
-        // Toggle the display of the iframe
-        if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
-          resumeFrame.style.display = 'block';
-          buttonText.textContent = 'Hide Resume';
+        if (buttonText) {
+          if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
+            resumeFrame.style.display = 'block';
+            buttonText.textContent = 'Hide Resume';
+            // Scroll to the resume frame
+            resumeFrame.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            resumeFrame.style.display = 'none';
+            buttonText.textContent = 'View Resume';
+          }
         } else {
-          resumeFrame.style.display = 'none';
-          buttonText.textContent = 'View Resume';
+          console.error('Button text element not found');
         }
       });
 
@@ -213,6 +218,11 @@
       });
       showResumeBtn.addEventListener('mouseleave', () => {
         gsap.to(resumeLine, { height: '2px', duration: 0.3, ease: 'power2.out' });
+      });
+
+      // Add touch event listener for mobile devices
+      showResumeBtn.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent default touch behavior
       });
     }
 
@@ -316,14 +326,27 @@
         e.preventDefault();
         const buttonText = this.querySelector('.button-text');
 
-        if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
-          resumeFrame.style.display = 'block';
-          buttonText.textContent = 'Hide Resume';
+        if (buttonText) {
+          if (resumeFrame.style.display === 'none' || resumeFrame.style.display === '') {
+            resumeFrame.style.display = 'block';
+            buttonText.textContent = 'Hide Resume';
+            // Scroll to the resume frame
+            resumeFrame.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            resumeFrame.style.display = 'none';
+            buttonText.textContent = 'View Resume';
+          }
         } else {
-          resumeFrame.style.display = 'none';
-          buttonText.textContent = 'View Resume';
+          console.error('Button text element not found');
         }
       });
+
+      // Add touch event listener for mobile devices
+      showResumeBtn.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Prevent default touch behavior
+      });
+    } else {
+      console.error('Resume button or frame not found');
     }
   });
 })();

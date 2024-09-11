@@ -387,10 +387,29 @@
 
 #showResumeBtn {
   color: #000 !important; /* Force black text color */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
 }
 
-#showResumeBtn:hover {
+#showResumeBtn:hover,
+#showResumeBtn:active {
   color: #000 !important; /* Ensure text stays black on hover */
+}
+
+/* Improve touch area for mobile */
+@media (max-width: 768px) {
+  #showResumeBtn {
+    padding: 15px 25px; /* Increase padding for larger touch area */
+    font-size: 16px; /* Increase font size for better visibility */
+  }
+}
+
+/* Style for the resume iframe */
+#resumeFrame {
+  width: 100%;
+  height: 600px; /* Adjust height as needed */
+  border: none;
+  margin-top: 20px;
 }
 
 .social-links-top {
