@@ -325,5 +325,24 @@
         selector: '.glightbox'
       });
     }
+
+    // Resume button toggle
+    const toggleResumeBtn = document.getElementById('toggleResumeBtn');
+    const resumeFrame = document.getElementById('resumeFrame');
+
+    if (toggleResumeBtn && resumeFrame) {
+      toggleResumeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (resumeFrame.classList.contains('active')) {
+          resumeFrame.classList.remove('active');
+          toggleResumeBtn.querySelector('.button-text').textContent = 'View Resume';
+        } else {
+          resumeFrame.classList.add('active');
+          toggleResumeBtn.querySelector('.button-text').textContent = 'Hide Resume';
+          resumeFrame.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
   });
 })();
