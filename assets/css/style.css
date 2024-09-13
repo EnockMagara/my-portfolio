@@ -154,7 +154,7 @@
     font-size: 1.5rem;
     margin-bottom: 10px;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards;
+    animation: slideInFromLeft 1s ease forwards;
     animation-delay: 0.5s;
   }
   
@@ -163,16 +163,16 @@
     font-weight: bold;
     margin-bottom: 20px;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 1s;
+    animation: slideInFromRight 1s ease forwards;
+    animation-delay: 0.5s;
   }
   
   .hero-description {
     font-size: 1.5rem;
     margin-bottom: 30px;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 1.5s;
+    animation: slideInFromLeft 1s ease forwards;
+    animation-delay: 0.5s;
   }
   
   .cta-button {
@@ -198,14 +198,25 @@
     color: #fff;
   }
   
-  @keyframes fadeInUp {
+  @keyframes slideInFromLeft {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(-100px); /* Start from -100px off the left */
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px); /* Start from 100px off the right */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
@@ -367,6 +378,8 @@
   border: none;
   transition: height 0.3s ease, opacity 0.3s ease;
   opacity: 0;
+  position: relative;
+  z-index: 1003; /* Higher than the social links top bar */
 }
 
 /* Improve touch area for mobile */
@@ -636,6 +649,12 @@ main.main {
   display: inline-block;
   margin-top: 10px;
 }
+
+.resume-container {
+  position: relative;
+  z-index: 1003;
+}
+
 .animated-button {
   display: inline-block;
   padding: 12px 24px;
@@ -648,6 +667,7 @@ main.main {
   border: 2px solid rgb(236, 91, 95);
   border-radius: 5px;
   position: relative;
+  overflow: hidden;
   background-color: transparent;
   transition: color 0.3s ease;
   margin: 5px;
