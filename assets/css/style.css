@@ -470,12 +470,10 @@
 
 .navbar ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around; /* Distributes space around items */
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-right: 20px; /* Add padding to the right of the list */
-  text-align: right; /* Align text to the right */
 }
 
 .navbar li {
