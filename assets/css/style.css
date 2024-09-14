@@ -221,31 +221,70 @@
   }
 
   /* About Section */
-  .about-me ul {
-    list-style: none;
-    padding: 0;
+  .about {
+    color: #fff;
+    background-color: #000; /* Assuming a dark theme as per your inspiration */
+    padding: 50px 0;
   }
-  
-  .about-me ul li {
+
+  .about h2 {
+    color: #ff6600; /* Styling for the section title */
+    margin-bottom: 20px;
+  }
+
+  .about-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .about-description {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .about-tech {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 50%;
+  }
+
+  .tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #222; /* Dark background for each icon */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .tech-icon i {
+    font-size: 2rem;
+    color: #ff6600; /* Icon color */
     margin-bottom: 10px;
   }
-  
-  .about-me ul li strong {
-    color: var(--secondary-color);
+
+  .tech-icon span {
+    color: #fff;
   }
-  
-  .skills-category {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    .about-flex {
+      flex-direction: column;
+    }
+
+    .about-description,
+    .about-tech {
+      width: 100%;
+    }
+
+    .about-tech {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-  
-  .skills-category i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-  }
-  
+
   /* Portfolio Section */
   .project-card {
     margin-bottom: 30px;
@@ -698,3 +737,50 @@ main.main {
 .animated-button:hover .button-line {
   height: 100%;
 }
+
+/* About Section Hyperlink Styling */
+.about-description a {
+  color: #ff6600; /* Assuming the up arrow uses this color, adjust as needed */
+  text-decoration: none; /* Removes underline */
+}
+
+/* Ensure the hyperlink does not underline on hover */
+.about-description a:hover {
+  text-decoration: none;
+}
+
+/* Icon Colors */
+.tech-icon .fa-python { color: #3776AB; } /* Python blue */
+.tech-icon .fa-js-square { color: #F7DF1E; } /* JavaScript yellow */
+.tech-icon .fa-html5 { color: #E34F26; } /* HTML5 orange */
+.tech-icon .fa-css3-alt { color: #1572B6; } /* CSS3 blue */
+.tech-icon .fa-swift { color: #F05138; } /* Swift orange */
+.tech-icon .fa-code { color: #5C5C5C; } /* Generic code icon gray */
+.tech-icon .fa-react { color: #61DAFB; } /* React blue */
+.tech-icon .fa-database { color: #006400; } /* Generic database green */
+.tech-icon .fa-git-alt { color: #F05032; } /* Git red */
+.tech-icon .fa-docker { color: #2496ED; } /* Docker blue */
+.tech-icon .fa-flask { color: #000000; } /* Flask black for generic */
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.tech-icon {
+  animation: bounce 5s infinite;
+}
+
+/* Additional styling for hover effect to enhance the bounce */
+.tech-icon:hover {
+  animation: bounce 1s infinite;
+}
+
