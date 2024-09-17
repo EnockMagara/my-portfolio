@@ -10,7 +10,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #808080; /* This is a gray color, adjust as needed */
+  background-color: #211e1e; /* This is a gray color, adjust as needed */
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 
 .main {
   min-height: calc(100vh - 40px); /* Subtract the height of the social links bar */
-  background-color: #808080; /* Same as body background */
+  background-color: #1d1b1b; /* Same as body background */
   padding-top: 0;
   margin-top: 0;
 }
@@ -193,6 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 1s; 
   z-index: 2000; 
   position: relative; 
+
 }
 
 .cta-button:hover {
@@ -397,7 +398,7 @@ footer {
 #showResumeBtn {
 display: inline-block;
 padding: 15px 25px;
-color: #000;
+color: #e5dbdb;
 text-decoration: none;
 font-weight: bold;
 text-transform: uppercase;
