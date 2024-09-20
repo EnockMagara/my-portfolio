@@ -96,6 +96,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation Menu */
+.navmenu {
+  overflow-x: hidden;
+}
+
 .navmenu ul {
   list-style: none;
   padding: 0;
@@ -410,6 +414,7 @@ transition: background-color 0.3s ease, color 0.3s ease;
 cursor: pointer;
 -webkit-tap-highlight-color: transparent;
 font-size: 16px;
+overflow-x: hidden;
 }
 
 #showResumeBtn:hover,
