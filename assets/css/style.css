@@ -18,6 +18,7 @@ body {
   line-height: 1.6;
   color: #fff; /* Adjust text color for better contrast */
   padding-top: 40px; /* Adjust this value to match the height of your social links bar */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main {
