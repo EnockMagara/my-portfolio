@@ -798,3 +798,30 @@ animation: bounce 5s infinite;
 .tech-icon:hover {
 animation: bounce 1s infinite;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .navbar {
+    /* Adjust the font size for smaller screens */
+    font-size: 14px;
+    /* Reduce padding to make the navbar more compact */
+    padding: 10px;
+  }
+
+  .navbar ul {
+    /* Stack the navbar items vertically */
+    flex-direction: column;
+    /* Center the items */
+    align-items: center;
+  }
+
+  .navbar li {
+    /* Add some margin between items */
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    /* Adjust the size of the icons */
+    font-size: 16px;
+  }
+}
