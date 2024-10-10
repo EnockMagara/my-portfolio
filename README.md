@@ -24,6 +24,10 @@ Welcome to the repository for my personal portfolio website. This site showcases
    ```
 2. Open `index.html` in your browser to view the site locally.
 
+## View Online
+
+You can view the live website at [enockmecheo.com](https://enockmecheo.com/).
+
 ## Contact
 
 Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/enock-mecheo-56390b1a6/) or [email](mailto:emm10042@nyu.edu) for any inquiries or collaborations.
