@@ -26,7 +26,7 @@ Welcome to the repository for my personal portfolio website. This site showcases
 
 ## View Online
 
-You can view the live website at [enockmecheo.com](https://enockmecheo.com/).
+You can view the live website at [enockmecheo.com](https://enockmagara.github.io/my-portfolio/).
 
 ## Contact
 
